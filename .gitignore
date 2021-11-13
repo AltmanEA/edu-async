@@ -1,3 +1,6 @@
 /jvm/.gradle
 /jvm/.idea
 /jvm/build
+/js/.gradle
+/js/.idea
+/js/build
