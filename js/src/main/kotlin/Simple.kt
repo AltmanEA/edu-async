@@ -9,6 +9,10 @@ fun main() {
 //    callbackExample()
 //    promiseExample()
 //    promiseChainExample()
+    promiseAllExample()
+}
+
+fun promiseAllExample() {
     Promise.all(
         arrayOf(
             resourceDownloader("A"),
