@@ -1,15 +1,16 @@
+import java.lang.management.ManagementFactory
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.concurrent.thread
 
 val currentTime
-    get() = System.nanoTime().toString().subSequence(6, 10)
+    get() = System.nanoTime().toString().subSequence(5, 10)
 
 fun main() {
 //    runThread()
 //    sleepThread()
 //    joinThread()
 //    syncThread()
-//    lockThread()
+    lockThread()
 //    deadlock()
 }
 
@@ -82,7 +83,8 @@ fun syncThread() {
     thread {
         for (delay in listOf(100L, 300L))
             coreSyncFun({ it + 10 }, delay)
-    }.join()
+    }
+    Thread.sleep(1000)
     println(shared)
 }
 
@@ -127,7 +129,7 @@ fun runThread() {
 
 fun printThreadInfo() {
     val currentThread = Thread.currentThread()
-    println("Current thread: ${currentThread.name}")
-    println("Thread group:   ${currentThread.threadGroup.name}")
-    println("Parent group:   ${currentThread.threadGroup.parent.name}")
+    val processID = ManagementFactory.getRuntimeMXBean().name
+    println("Thread: ${currentThread.name}")
+    println("Process: $processID")
 }
