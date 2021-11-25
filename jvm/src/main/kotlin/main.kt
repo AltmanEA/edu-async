@@ -5,14 +5,14 @@ import kotlin.concurrent.thread
 val currentTime
     get() = System.nanoTime().toString().subSequence(5, 10)
 
-fun main() {
+//fun main() {
 //    runThread()
 //    sleepThread()
 //    joinThread()
 //    syncThread()
-    lockThread()
+//    lockThread()
 //    deadlock()
-}
+//}
 
 fun deadlock() {
     val lockA = ReentrantLock()

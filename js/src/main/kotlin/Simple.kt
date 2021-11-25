@@ -58,7 +58,7 @@ fun promiseExample() {
     val promise = Promise<String> { resolve, reject ->
         window.setTimeout(
             {
-                val isOk = (0..10).random() < 5
+                val isOk = (0..10).random() < 9
                 if (isOk)
                     resolve("Resource downloaded at $currentTime")
                 else
@@ -77,7 +77,7 @@ fun promiseExample() {
 
 fun callbackExample() {
     window.setTimeout(
-        { console.log("I am sleeping  at $currentTime") },
+        { console.log("I woke up at $currentTime") },
         1000
     )
     console.log("End of timeout example  at $currentTime")
